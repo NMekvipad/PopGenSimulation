@@ -17,7 +17,7 @@ def get_sfslist(sfs_path):
     '''get sfs of all replicates from input path to sfs file'''
 
     sfs_list = list()
-    sam_sfs=np.loadtxt(sfs_path, skiprows=3)
+    sam_sfs=np.loadtxt(sfs_path, skiprows=2)
     for row in sam_sfs:
         sfs_list.append('\t'.join(str(int(val)) for val in list(row[1:-1])))
 
@@ -27,7 +27,7 @@ def get_seqlen(sfs_path):
 
     '''get total length of sequence from sfs file'''
 
-    sam_sfs=np.loadtxt(sfs_path, skiprows=3)[0, :]
+    sam_sfs=np.loadtxt(sfs_path, skiprows=2)[0, :]
 
     return int(np.sum(sam_sfs))
 
@@ -35,7 +35,7 @@ def get_nseq(sfs_path):
 
     '''get total number of sequence from sfs file'''
 
-    sam_sfs = np.loadtxt(sfs_path, skiprows=3)[0, :]
+    sam_sfs = np.loadtxt(sfs_path, skiprows=2)[0, :]
 
     return sam_sfs.shape[0] - 1
 
