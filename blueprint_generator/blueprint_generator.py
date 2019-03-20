@@ -41,7 +41,7 @@ def get_nseq(sfs_path):
 
 
 def blueprint_generator(sfs_path, stairway_path='../stairway_software/stairway_plot_v2/stairway_plot_es', fold='false',
-                        n_bootstrap='0', pct_training='0.67', mut_rate='1.2e-8', len_gen='25'):
+                        n_bootstrap='200', pct_training='0.67', mut_rate='1.2e-8', len_gen='25'):
 
     '''create blueprint file for stairway plot from sfs file
         The 2 main input are
