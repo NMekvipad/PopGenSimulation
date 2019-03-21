@@ -1,12 +1,13 @@
 import regex as re
 import numpy as np
+import os
 
 def get_sfsname(sfs_path):
 
     '''get the name of sfs file from input path to sfs file'''
 
     with open(sfs_path, 'r') as sfs_file:
-        name_wext = sfs_file.name
+        name_wext = os.path.basename(sfs_file.name)
 
     name = re.findall(r'(.*)_DAFpop0.obs', name_wext)[0]
 
@@ -40,8 +41,8 @@ def get_nseq(sfs_path):
     return sam_sfs.shape[0] - 1
 
 
-def blueprint_generator(sfs_path, stairway_path='../stairway_software/stairway_plot_v2/stairway_plot_es', fold='false',
-                        n_bootstrap='200', pct_training='0.67', mut_rate='1.2e-8', len_gen='25'):
+def blueprint_generator(sfs_path, stairway_path='stairway_plot_es', fold='false',
+                        n_bootstrap='1', pct_training='0.67', mut_rate='1.2e-8', len_gen='25'):
 
     '''create blueprint file for stairway plot from sfs file
         The 2 main input are
@@ -61,18 +62,19 @@ def blueprint_generator(sfs_path, stairway_path='../stairway_software/stairway_p
                         str(round((seq_count-2)*3/4)), str(round((seq_count-2)))])
 
     for idx, sfs in enumerate(sfs_list):
-        write_out = ['popid: {}'.format(sfs_name), 'nseq: {}'.format(str(seq_count)), 'L: {}'.format(seq_len),
+        write_out = ['popid: {}-{}'.format(sfs_name, idx+1), 'nseq: {}'.format(str(seq_count)), 'L: {}'.format(seq_len),
                      'whether_folded: {}'.format(fold), 'SFS: {}'.format(sfs), 'pct_training: {}'.format(pct_training),
-                     'nrand: {}'.format(n_rand), 'project_dir: {}'.format(sfs_name),
+                     'nrand: {}'.format(n_rand), 'project_dir: {}-{}'.format(sfs_name, idx+1),
                      'stairway_plot_dir: {}'.format(stairway_path), 'ninput: {}'.format(n_bootstrap),
                      'mu: {}'.format(mut_rate), 'year_per_generation: {}'.format(len_gen),
-                     'plot_title: {}'.format(sfs_name),
+                     'plot_title: {}-{}'.format(sfs_name, idx+1),
                      'xrange: 0.1,10000\nyrange: 0,0\nxspacing: 2\nyspacing: 2\nfontsize: 12']
 
         with open('{}-{}.blueprint'.format(sfs_name, idx+1), 'w') as outfile:
             outfile.write('\n'.join(write_out))
 
-blueprint_generator('test_DAFpop0.obs')
+blueprint_generator(sfs_path='./blueprint_generator/boot1_10000_DAFpop0.obs', stairway_path='/home/tpx555/myfile/Pop_gen/project/stairway_software/'
+                                                      'stairway_plot_v2/stairway_plot_es')
 
 
 
