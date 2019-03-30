@@ -2,14 +2,14 @@ import regex as re
 import numpy as np
 import os
 
-def get_sfsname(sfs_path):
+def get_sfsname(sfs_path, pattern=r'(.*)_DAFpop0.obs'):
 
     '''get the name of sfs file from input path to sfs file'''
 
     with open(sfs_path, 'r') as sfs_file:
         name_wext = os.path.basename(sfs_file.name)
 
-    name = re.findall(r'(.*)_DAFpop0.obs', name_wext)[0]
+    name = re.findall(pattern, name_wext)[0]
 
     return name
 
@@ -41,16 +41,19 @@ def get_nseq(sfs_path):
     return sam_sfs.shape[0] - 1
 
 
-def blueprint_generator(sfs_path, stairway_path='stairway_plot_es', fold='false',
-                        n_bootstrap='1', pct_training='0.67', mut_rate='1.2e-8', len_gen='25'):
+def blueprint_generator(sfs_path, stairway_path='stairway_plot_es', pattern=r'(.*)_DAFpop0.obs', fold='false',
+                        n_bootstrap='200', pct_training='0.67', mut_rate='1.2e-8', len_gen='25'):
 
     '''create blueprint file for stairway plot from sfs file
         The 2 main input are
             1) the path to sfs file (_DAFpop0.obs file from fasimcoal)
             2) the path from blueprint file to stairway_plot_es folder
+	Other parameters that can be changed include the name pattern of SFS file from fastsimcoal (pattern), 
+	number of bootstrap (n_bootstrap) used for stairway analysis, percentage of training data in used (pct_training), 
+	mutation rate (mut_rate), generation time (len_gen)
     '''
 
-    sfs_name = get_sfsname(sfs_path)
+    sfs_name = get_sfsname(sfs_path, pattern)
 
     seq_len = get_seqlen(sfs_path)
 
@@ -72,9 +75,6 @@ def blueprint_generator(sfs_path, stairway_path='stairway_plot_es', fold='false'
 
         with open('{}-{}.blueprint'.format(sfs_name, idx+1), 'w') as outfile:
             outfile.write('\n'.join(write_out))
-
-blueprint_generator(sfs_path='./blueprint_generator/boot1_10000_DAFpop0.obs', stairway_path='/home/tpx555/myfile/Pop_gen/project/stairway_software/'
-                                                      'stairway_plot_v2/stairway_plot_es')
 
 
 
