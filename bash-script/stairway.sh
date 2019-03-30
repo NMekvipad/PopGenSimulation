@@ -1,5 +1,5 @@
 FILES=./*.blueprint
-STAIRWAY_PATH=../stairway_software/stairway_plot_v2/stairway_plot_es
+STAIRWAY_PATH=./stairway_plot_es
 
 for f in $FILES
 do

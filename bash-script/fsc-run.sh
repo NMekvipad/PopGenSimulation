@@ -1,5 +1,5 @@
 # run fsc26 over all par file in single-pop parameter set
-FILES=../parameters_file/single-pop/*.par
+FILES=.*.par
 
 for f in $FILES
 do
