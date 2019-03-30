@@ -1,0 +1,18 @@
+popid: two-expanding-nomig-2
+nseq: 10
+L: 100000000
+whether_folded: false
+SFS: 39334	17230	10537	7671	20119	1174	1159	1063	1023
+pct_training: 0.67
+nrand: 2	4	6	8
+project_dir: two-expanding-nomig-2
+stairway_plot_dir: stairway_plot_es
+ninput: 200
+mu: 1.2e-8
+year_per_generation: 25
+plot_title: two-expanding-nomig-2
+xrange: 0.1,10000
+yrange: 0,0
+xspacing: 2
+yspacing: 2
+fontsize: 12

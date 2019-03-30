@@ -1,0 +1,18 @@
+popid: exponential_2p_m001-3
+nseq: 10
+L: 100000000
+whether_folded: false
+SFS: 36594	15514	9470	6568	4939	4024	3257	2716	2467
+pct_training: 0.67
+nrand: 2	4	6	8
+project_dir: exponential_2p_m001-3
+stairway_plot_dir: /home/cql615/project/obs/blueprints/stairway_plot_v2
+ninput: 200
+mu: 1.2e-8
+year_per_generation: 25
+plot_title: exponential_2p_m001-3
+xrange: 0.1,10000
+yrange: 0,0
+xspacing: 2
+yspacing: 2
+fontsize: 12
