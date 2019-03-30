@@ -1,0 +1,18 @@
+popid: two1-decline-001
+nseq: 10
+L: 100000000
+whether_folded: false
+SFS: 33365   18935   14293   11172   9434    8174    7477    6724    6034
+pct_training: 0.67
+nrand: 2	4	6	8
+project_dir: two1-decline-001
+stairway_plot_dir: home/xrn950/groupdirs/SCIENCE-BIO-popgen_course-project/simulations1/stairway_plot_v2/stairway_plot_es
+ninput: 200
+mu: 1.2e-8
+year_per_generation: 25
+plot_title: two1-decline-001
+xrange: 0.1,10000
+yrange: 0,0
+xspacing: 2
+yspacing: 2
+fontsize: 12

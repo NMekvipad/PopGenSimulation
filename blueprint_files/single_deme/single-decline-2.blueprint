@@ -1,0 +1,18 @@
+popid: single-decline-2
+nseq: 10
+L: 100000000
+whether_folded: false
+SFS: 29856	17066	12307	10043	8690	6999	6310	5739	5217
+pct_training: 0.67
+nrand: 2	4	6	8
+project_dir: single-decline-2
+stairway_plot_dir: /home/tpx555/myfile/Pop_gen/project/stairway_software/stairway_plot_v2/stairway_plot_es
+ninput: 200
+mu: 1.2e-8
+year_per_generation: 25
+plot_title: single-decline-2
+xrange: 0.1,10000
+yrange: 0,0
+xspacing: 2
+yspacing: 2
+fontsize: 12

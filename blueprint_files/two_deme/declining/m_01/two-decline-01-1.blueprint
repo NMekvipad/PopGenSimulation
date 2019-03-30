@@ -1,0 +1,18 @@
+popid: two1-decline-01
+nseq: 10
+L: 100000000
+whether_folded: false
+SFS: 32710	18972	14089	11890	9190	8458	7306	6455	5897
+pct_training: 0.67
+nrand: 2	4	6	8
+project_dir: two1-decline-01
+stairway_plot_dir: stairway_plot_es
+ninput: 200
+mu: 1.2e-8
+year_per_generation: 25
+plot_title: two1-decline-01
+xrange: 0.1,10000
+yrange: 0,0
+xspacing: 2
+yspacing: 2
+fontsize: 12

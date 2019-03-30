@@ -1,0 +1,18 @@
+popid: single-pop-expand-10000-3
+nseq: 10 
+L: 100000000 
+whether_folded: false 
+SFS: 38287	16655	10383	7119	5290	4344	3636	3325	2613
+pct_training: 0.67 
+nrand: 2	4	6	8 
+project_dir: single-pop-expand-10000-3
+stairway_plot_dir: ../stairway_software/stairway_plot_v2/stairway_plot_es 
+ninput: 200 
+mu: 1.2e-8 
+year_per_generation: 25 
+plot_title: single-pop-expand-10000-3
+xrange: 0.1,1000 
+yrange: 0,0 
+xspacing: 2 
+yspacing: 2 
+fontsize: 12 
